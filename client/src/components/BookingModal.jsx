@@ -46,7 +46,7 @@ const BookingModal = ({ isOpen, onClose, type = 'Demo', courseName = '', courseI
             };
 
             await axios.post(
-                'https://disenosys-ks3n.onrender.com/api/bookings',
+                '/api/bookings',
                 {
                     ...formData,
                     type: type, // Backend expects 'type', not 'bookingType'

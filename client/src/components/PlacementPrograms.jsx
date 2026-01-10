@@ -1,28 +1,66 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaArrowRight, FaUserFriends } from 'react-icons/fa';
 import plasticImg from '../assets/plastic (2).webp';
 import biwImg from '../assets/BIW.webp';
 import cadImg from '../assets/cad (1).webp';
+import BookingModal from './BookingModal';
+import CourseDetailsModal from './CourseDetailsModal';
+import AuthContext from '../context/AuthContext';
 
 const programs = [
     {
+        id: 'pg1',
         title: "PG Diploma in Plastic Trims Design",
         students: "5,957",
-        image: plasticImg
+        image: plasticImg,
+        description: "Master the art of Plastic Trims Design with our comprehensive PG Diploma. Learn industry-standard tools, material selection, and manufacturing processes used by top OEMs.",
+        category: "PG Diploma",
+        price: "1,50,000"
     },
     {
+        id: 'pg2',
         title: "PG Diploma in BIW Design",
         students: "4,230",
-        image: biwImg
+        image: biwImg,
+        description: "Specialized training in Body-in-White (BIW) design. Understand vehicle architecture, sheet metal design, and joining techniques required for modern automotive body engineering.",
+        category: "PG Diploma",
+        price: "1,50,000"
     },
     {
+        id: 'pg3',
         title: "Masters in Automotive Body Design",
         students: "6,100",
-        image: cadImg
+        image: cadImg,
+        description: "An advanced master's program covering all aspects of automotive body design, including surface modeling, structural analysis, and safety standards.",
+        category: "Masters Program",
+        price: "2,00,000"
     }
 ];
 
 const PlacementPrograms = () => {
+    const [selectedCourse, setSelectedCourse] = useState(null);
+    const [showDetailsModal, setShowDetailsModal] = useState(false);
+    const [showBookingModal, setShowBookingModal] = useState(false);
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleViewDetails = (program) => {
+        setSelectedCourse(program);
+        setShowDetailsModal(true);
+    };
+
+    const handleModalApply = () => {
+        setShowDetailsModal(false);
+        if (!user) {
+            navigate('/login');
+            return;
+        }
+        setTimeout(() => {
+            setShowBookingModal(true);
+        }, 300);
+    };
+
     return (
         <section className="py-20 bg-white font-dm-sans">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +74,11 @@ const PlacementPrograms = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {programs.map((program, index) => (
-                        <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+                        <div
+                            key={index}
+                            onClick={() => handleViewDetails(program)}
+                            className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer transform hover:-translate-y-2 transition-all duration-300"
+                        >
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
                             <img
                                 src={program.image}
@@ -62,6 +104,23 @@ const PlacementPrograms = () => {
                     ))}
                 </div>
             </div>
+
+            {/* Modals */}
+            <CourseDetailsModal
+                isOpen={showDetailsModal}
+                onClose={() => setShowDetailsModal(false)}
+                course={selectedCourse}
+                onApply={handleModalApply}
+            />
+
+            <BookingModal
+                isOpen={showBookingModal}
+                onClose={() => setShowBookingModal(false)}
+                type="Course Application"
+                courseName={selectedCourse?.title}
+                courseId={selectedCourse?.id}
+                price={selectedCourse?.price}
+            />
         </section>
     );
 };
