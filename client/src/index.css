@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-dm-sans: "DM Sans", sans-serif;
+  --color-brand-primary: #0D0D2B;
+  --color-brand-accent: #2B4DFF;
+  --color-brand-cyan: #00F0FF;
+}
+
+body {
+  font-family: var(--font-dm-sans);
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Marquee Styles */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: scroll-left 25s linear infinite;
+  width: max-content; /* Ensure it takes full width of content */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
