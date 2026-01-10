@@ -14,13 +14,13 @@ const AdminDashboard = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    
+
     const [isCourseModalOpen, setIsCourseModalOpen] = useState(false);
     const [currentCourse, setCurrentCourse] = useState(null);
     const [isUserModalOpen, setIsUserModalOpen] = useState(false);
     const [currentUser, setCurrentUser] = useState(null);
 
-    
+
     const [courseForm, setCourseForm] = useState({ title: '', category: '', price: '', image: '', description: '' });
     const [userForm, setUserForm] = useState({ name: '', email: '', isAdmin: false });
 
@@ -34,9 +34,9 @@ const AdminDashboard = () => {
         if (user && user.isAdmin) {
             try {
                 const config = { headers: { Authorization: `Bearer ${user.token}` } };
-                const { data: usersData } = await axios.get('http://localhost:5001/api/users', config);
-                const { data: bookingsData } = await axios.get('http://localhost:5001/api/bookings', config);
-                const { data: coursesData } = await axios.get('http://localhost:5001/api/courses', config); 
+                const { data: usersData } = await axios.get('https://disenosys-ks3n.onrender.com/api/users', config);
+                const { data: bookingsData } = await axios.get('https://disenosys-ks3n.onrender.com/api/bookings', config);
+                const { data: coursesData } = await axios.get('https://disenosys-ks3n.onrender.com/api/courses', config);
 
                 setUsers(usersData);
                 setBookings(bookingsData);
@@ -54,23 +54,23 @@ const AdminDashboard = () => {
         fetchData();
     }, [user]);
 
-    
+
     const handleStatusChange = async (id, newStatus) => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.put(`http://localhost:5001/api/bookings/${id}/status`, { status: newStatus }, config);
-            fetchData(); 
+            await axios.put(`https://disenosys-ks3n.onrender.com/api/bookings/${id}/status`, { status: newStatus }, config);
+            fetchData();
         } catch (err) {
             alert('Failed to update status');
         }
     };
 
-    
+
     const handleDeleteUser = async (id) => {
         if (window.confirm('Are you sure you want to delete this user?')) {
             try {
                 const config = { headers: { Authorization: `Bearer ${user.token}` } };
-                await axios.delete(`http://localhost:5001/api/users/${id}`, config);
+                await axios.delete(`https://disenosys-ks3n.onrender.com/api/users/${id}`, config);
                 fetchData();
             } catch (err) {
                 alert('Failed to delete user');
@@ -88,7 +88,7 @@ const AdminDashboard = () => {
         e.preventDefault();
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.put(`http://localhost:5001/api/users/${currentUser._id}`, userForm, config);
+            await axios.put(`https://disenosys-ks3n.onrender.com/api/users/${currentUser._id}`, userForm, config);
             setIsUserModalOpen(false);
             fetchData();
         } catch (err) {
@@ -96,12 +96,12 @@ const AdminDashboard = () => {
         }
     };
 
-    
+
     const handleDeleteCourse = async (id) => {
         if (window.confirm('Are you sure?')) {
             try {
                 const config = { headers: { Authorization: `Bearer ${user.token}` } };
-                await axios.delete(`http://localhost:5001/api/courses/${id}`, config);
+                await axios.delete(`https://disenosys-ks3n.onrender.com/api/courses/${id}`, config);
                 fetchData();
             } catch (err) {
                 alert('Failed to delete course');
@@ -126,9 +126,9 @@ const AdminDashboard = () => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
             if (currentCourse) {
-                await axios.put(`http://localhost:5001/api/courses/${currentCourse._id}`, courseForm, config);
+                await axios.put(`https://disenosys-ks3n.onrender.com/api/courses/${currentCourse._id}`, courseForm, config);
             } else {
-                await axios.post('http://localhost:5001/api/courses', courseForm, config);
+                await axios.post('https://disenosys-ks3n.onrender.com/api/courses', courseForm, config);
             }
             setIsCourseModalOpen(false);
             fetchData();
@@ -144,7 +144,7 @@ const AdminDashboard = () => {
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-3xl font-bold text-gray-900 mb-8">Admin Dashboard</h1>
 
-                {}
+                { }
                 <div className="flex space-x-4 mb-6 border-b border-gray-200 pb-1">
                     {['bookings', 'users', 'courses'].map(tab => (
                         <button
@@ -165,7 +165,7 @@ const AdminDashboard = () => {
                 ) : (
                     <div className="bg-white shadow overflow-hidden sm:rounded-lg min-h-[400px]">
 
-                        {}
+                        { }
                         {activeTab === 'bookings' && (
                             <table className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-50">
@@ -189,7 +189,7 @@ const AdminDashboard = () => {
                                                     value={booking.status || 'Pending'}
                                                     onChange={(e) => handleStatusChange(booking._id, e.target.value)}
                                                     className={`rounded border-gray-300 text-xs font-bold py-1 px-2 ${booking.status === 'Approved' ? 'text-green-600 bg-green-50' :
-                                                            booking.status === 'Rejected' ? 'text-red-600 bg-red-50' : 'text-yellow-600 bg-yellow-50'
+                                                        booking.status === 'Rejected' ? 'text-red-600 bg-red-50' : 'text-yellow-600 bg-yellow-50'
                                                         }`}
                                                 >
                                                     <option value="Pending">Pending</option>
@@ -203,7 +203,7 @@ const AdminDashboard = () => {
                             </table>
                         )}
 
-                        {}
+                        { }
                         {activeTab === 'users' && (
                             <table className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-50">
@@ -232,7 +232,7 @@ const AdminDashboard = () => {
                             </table>
                         )}
 
-                        {}
+                        { }
                         {activeTab === 'courses' && (
                             <div className="p-4">
                                 <div className="flex justify-end mb-4">
@@ -261,7 +261,7 @@ const AdminDashboard = () => {
                 )}
             </div>
 
-            {}
+            { }
             {isUserModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
                     <div className="bg-white rounded-lg p-6 max-w-md w-full">
@@ -288,7 +288,7 @@ const AdminDashboard = () => {
                 </div>
             )}
 
-            {}
+            { }
             {isCourseModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
                     <div className="bg-white rounded-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">

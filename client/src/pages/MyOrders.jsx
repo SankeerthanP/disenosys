@@ -24,7 +24,7 @@ const MyOrders = () => {
                         Authorization: `Bearer ${user.token}`,
                     },
                 };
-                const { data } = await axios.get('http://localhost:5001/api/bookings/mybookings', config);
+                const { data } = await axios.get('https://disenosys-ks3n.onrender.com/api/bookings/mybookings', config);
                 setBookings(data);
                 setLoading(false);
             } catch (err) {

@@ -21,7 +21,7 @@ const BookingModal = ({ isOpen, onClose, type = 'Demo', courseName = '', courseI
 
         if (type === 'Course Application') {
             setProcessingPayment(true);
-            
+
             setTimeout(async () => {
                 setProcessingPayment(false);
                 setLoading(true);
@@ -38,14 +38,14 @@ const BookingModal = ({ isOpen, onClose, type = 'Demo', courseName = '', courseI
             const config = {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${JSON.parse(localStorage.getItem('userInfo'))?.token}` 
+                    'Authorization': `Bearer ${JSON.parse(localStorage.getItem('userInfo'))?.token}`
                 },
             };
 
-            
-            
 
-            
+
+
+
             const userInfo = localStorage.getItem('userInfo');
             const token = userInfo ? JSON.parse(userInfo).token : null;
 
@@ -58,11 +58,11 @@ const BookingModal = ({ isOpen, onClose, type = 'Demo', courseName = '', courseI
 
 
             await axios.post(
-                'http://localhost:5001/api/bookings',
+                'https://disenosys-ks3n.onrender.com/api/bookings',
                 {
                     ...formData,
                     bookingType: type,
-                    courseId: type === 'Course Application' ? courseId : undefined, 
+                    courseId: type === 'Course Application' ? courseId : undefined,
                 },
                 authConfig
             );
@@ -83,7 +83,7 @@ const BookingModal = ({ isOpen, onClose, type = 'Demo', courseName = '', courseI
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md relative overflow-hidden font-dm-sans">
-                {}
+                { }
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
