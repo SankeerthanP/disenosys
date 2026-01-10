@@ -35,36 +35,24 @@ const BookingModal = ({ isOpen, onClose, type = 'Demo', courseName = '', courseI
 
     const submitBooking = async () => {
         try {
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${JSON.parse(localStorage.getItem('userInfo'))?.token}`
-                },
-            };
-
-
-
-
-
             const userInfo = localStorage.getItem('userInfo');
             const token = userInfo ? JSON.parse(userInfo).token : null;
 
-            const authConfig = {
+            const config = {
                 headers: {
                     'Content-Type': 'application/json',
                     ...(token && { 'Authorization': `Bearer ${token}` })
                 }
             };
 
-
             await axios.post(
                 'https://disenosys-ks3n.onrender.com/api/bookings',
                 {
                     ...formData,
-                    bookingType: type,
+                    type: type, // Backend expects 'type', not 'bookingType'
                     courseId: type === 'Course Application' ? courseId : undefined,
                 },
-                authConfig
+                config
             );
 
             setSuccess(true);
