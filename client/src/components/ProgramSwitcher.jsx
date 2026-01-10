@@ -98,7 +98,7 @@ const ProgramSwitcher = () => {
         <section className="py-20 bg-gray-50 font-dm-sans" id="courses">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                {/* Header */}
+                {}
                 <div className="text-center mb-12">
                     <h3 className="text-brand-primary font-bold tracking-wider text-xs uppercase mb-2">PROGRAMMES WE OFFER</h3>
                     <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-4">
@@ -109,7 +109,7 @@ const ProgramSwitcher = () => {
                     </p>
                 </div>
 
-                {/* Tabs */}
+                {}
                 <div className="flex justify-center mb-16">
                     <div className="bg-gray-200 p-1 rounded-full flex">
                         <button
@@ -133,7 +133,7 @@ const ProgramSwitcher = () => {
                     </div>
                 </div>
 
-                {/* Content Grid */}
+                {}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {activeTab === 'pg' ? (
                         pgPrograms.map((course) => (

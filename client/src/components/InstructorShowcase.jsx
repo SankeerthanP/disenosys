@@ -37,7 +37,7 @@ const InstructorShowcase = () => {
         <section className="py-20 bg-white font-dm-sans">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                {/* Header */}
+                {}
                 <div className="text-center mb-20">
                     <h3 className="text-gray-500 font-bold tracking-wider text-xs uppercase mb-2">FACULTIES</h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-brand-primary mb-4">
@@ -52,14 +52,14 @@ const InstructorShowcase = () => {
                     {instructors.map((inst, index) => (
                         <div key={index} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
 
-                            {/* Initials Card - Alternating Position */}
+                            {}
                             <div className={`lg:col-span-3 flex justify-center ${index % 2 !== 0 ? 'lg:order-last' : ''}`}>
                                 <div className="w-48 h-48 bg-gradient-to-br from-brand-cyan to-brand-primary rounded-2xl shadow-xl flex items-center justify-center transform rotate-3 hover:rotate-0 transition-all duration-300">
                                     <span className="text-6xl font-bold text-white">{inst.initials}</span>
                                 </div>
                             </div>
 
-                            {/* Content - Always Left Aligned Text */}
+                            {}
                             <div className="lg:col-span-9 space-y-6">
                                 <div>
                                     <h3 className="text-2xl font-bold text-brand-primary">{inst.name}</h3>

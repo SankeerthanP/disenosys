@@ -40,7 +40,7 @@ const WorkProcess = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-                    {/* Connecting Line (Desktop) */}
+                    {}
                     <div className="hidden md:block absolute top-12 left-0 w-full h-1 bg-gray-100 -z-10"></div>
 
                     {steps.map((step, index) => (
@@ -54,7 +54,7 @@ const WorkProcess = () => {
                     ))}
                 </div>
 
-                {/* Stats Grid */}
+                {}
                 <div className="mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                     {stats.map((stat, index) => (
                         <div key={index} className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition-shadow">

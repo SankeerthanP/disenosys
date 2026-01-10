@@ -14,13 +14,13 @@ const AdminDashboard = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    // Modal States
+    
     const [isCourseModalOpen, setIsCourseModalOpen] = useState(false);
     const [currentCourse, setCurrentCourse] = useState(null);
     const [isUserModalOpen, setIsUserModalOpen] = useState(false);
     const [currentUser, setCurrentUser] = useState(null);
 
-    // Form States
+    
     const [courseForm, setCourseForm] = useState({ title: '', category: '', price: '', image: '', description: '' });
     const [userForm, setUserForm] = useState({ name: '', email: '', isAdmin: false });
 
@@ -36,7 +36,7 @@ const AdminDashboard = () => {
                 const config = { headers: { Authorization: `Bearer ${user.token}` } };
                 const { data: usersData } = await axios.get('http://localhost:5001/api/users', config);
                 const { data: bookingsData } = await axios.get('http://localhost:5001/api/bookings', config);
-                const { data: coursesData } = await axios.get('http://localhost:5001/api/courses', config); // Assuming public or protected
+                const { data: coursesData } = await axios.get('http://localhost:5001/api/courses', config); 
 
                 setUsers(usersData);
                 setBookings(bookingsData);
@@ -54,18 +54,18 @@ const AdminDashboard = () => {
         fetchData();
     }, [user]);
 
-    // --- Bookings ---
+    
     const handleStatusChange = async (id, newStatus) => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
             await axios.put(`http://localhost:5001/api/bookings/${id}/status`, { status: newStatus }, config);
-            fetchData(); // Refresh
+            fetchData(); 
         } catch (err) {
             alert('Failed to update status');
         }
     };
 
-    // --- Users ---
+    
     const handleDeleteUser = async (id) => {
         if (window.confirm('Are you sure you want to delete this user?')) {
             try {
@@ -96,7 +96,7 @@ const AdminDashboard = () => {
         }
     };
 
-    // --- Courses ---
+    
     const handleDeleteCourse = async (id) => {
         if (window.confirm('Are you sure?')) {
             try {
@@ -144,7 +144,7 @@ const AdminDashboard = () => {
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-3xl font-bold text-gray-900 mb-8">Admin Dashboard</h1>
 
-                {/* Tabs */}
+                {}
                 <div className="flex space-x-4 mb-6 border-b border-gray-200 pb-1">
                     {['bookings', 'users', 'courses'].map(tab => (
                         <button
@@ -165,7 +165,7 @@ const AdminDashboard = () => {
                 ) : (
                     <div className="bg-white shadow overflow-hidden sm:rounded-lg min-h-[400px]">
 
-                        {/* --- BOOKINGS TAB --- */}
+                        {}
                         {activeTab === 'bookings' && (
                             <table className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-50">
@@ -203,7 +203,7 @@ const AdminDashboard = () => {
                             </table>
                         )}
 
-                        {/* --- USERS TAB --- */}
+                        {}
                         {activeTab === 'users' && (
                             <table className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-50">
@@ -232,7 +232,7 @@ const AdminDashboard = () => {
                             </table>
                         )}
 
-                        {/* --- COURSES TAB --- */}
+                        {}
                         {activeTab === 'courses' && (
                             <div className="p-4">
                                 <div className="flex justify-end mb-4">
@@ -261,7 +261,7 @@ const AdminDashboard = () => {
                 )}
             </div>
 
-            {/* --- USER EDIT MODAL --- */}
+            {}
             {isUserModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
                     <div className="bg-white rounded-lg p-6 max-w-md w-full">
@@ -288,7 +288,7 @@ const AdminDashboard = () => {
                 </div>
             )}
 
-            {/* --- COURSE MODAL --- */}
+            {}
             {isCourseModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
                     <div className="bg-white rounded-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">

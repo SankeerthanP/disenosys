@@ -10,7 +10,7 @@ const Hero = () => {
 
     return (
         <section className="relative w-full min-h-screen pb-16 overflow-hidden flex items-center">
-            {/* Background Image */}
+            {}
             <div
                 className="absolute inset-0 z-0 bg-cover bg-left md:bg-center"
                 style={{
@@ -19,13 +19,13 @@ const Hero = () => {
                 }}
             />
 
-            {/* Gradient Overlays for better text readability and seamless blending */}
+            {}
             <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#050518]/90 via-[#050518]/70 to-transparent" />
             <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#050518] via-transparent to-transparent" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full h-full flex flex-col md:flex-row items-center">
 
-                {/* Left Content */}
+                {}
                 <div className="w-full md:w-1/2 pt-10 md:pt-0">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -56,10 +56,10 @@ const Hero = () => {
                     </motion.div>
                 </div>
 
-                {/* Right Content - Image and Floating Cards */}
+                {}
                 <div className="w-full md:w-1/2 relative mt-12 md:mt-0 h-[500px] md:h-auto flex justify-center md:justify-end">
 
-                    {/* Student Image */}
+                    {}
                     <motion.img
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -69,7 +69,7 @@ const Hero = () => {
                         className="relative z-10 h-full max-h-[500px] md:max-h-[600px] object-contain"
                     />
 
-                    {/* Floating Card 1: 250k Assisted */}
+                    {}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8, x: -50 }}
                         animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -85,7 +85,7 @@ const Hero = () => {
                         </div>
                     </motion.div>
 
-                    {/* Floating Card 2: Admission Completed */}
+                    {}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8, x: 50 }}
                         animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -101,7 +101,7 @@ const Hero = () => {
                         </div>
                     </motion.div>
 
-                    {/* Floating Card 3: Class Schedule */}
+                    {}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8, y: 50 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -122,14 +122,14 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Bottom Curve */}
+            {}
             <div className="absolute bottom-0 left-0 right-0 z-10 w-full overflow-hidden leading-none">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(140%)] h-[60px] md:h-[100px] fill-white">
                     <path d="M985.66,92.83C906.67,72,823.78,31,432.84,2.45,129.56-23.23,0,51.84,0,51.84V120H1200V0C1200,0,1130.63,115.68,985.66,92.83Z" className="shape-fill"></path>
                 </svg>
             </div>
 
-            {/* WhatsApp Widget */}
+            {}
             <a
                 href="https://wa.me/"
                 target="_blank"
@@ -139,7 +139,7 @@ const Hero = () => {
                 <FaWhatsapp size={32} />
             </a>
 
-            {/* Quiz Card Modal */}
+            {}
             {showQuiz && (
                 <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <motion.div

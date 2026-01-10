@@ -37,7 +37,7 @@ const ExpertTeam = () => {
                     {team.map((member, index) => (
                         <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow group">
                             <div className="h-64 bg-[#a5b4fc] relative overflow-hidden flex items-end justify-center">
-                                {/* Using a placeholder for the person cut-out look */}
+                                {}
                                 <img
                                     src={member.image}
                                     alt={member.name}

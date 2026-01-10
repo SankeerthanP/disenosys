@@ -36,7 +36,7 @@ const Placement = () => {
                 </h2>
             </div>
 
-            {/* Company Logos Marquee */}
+            {}
             <div className="border-b border-gray-100 pb-12 mb-20">
                 <div className="marquee-container">
                     <div className="marquee-content">
@@ -50,7 +50,7 @@ const Placement = () => {
                 </div>
             </div>
 
-            {/* Placed Students Marquee (New Section) */}
+            {}
             <div className="mb-20">
                 <div className="text-center mb-10">
                     <h3 className="text-xl font-bold text-gray-900">Recent <span className="text-brand-accent">Placements</span></h3>
@@ -58,7 +58,7 @@ const Placement = () => {
                 </div>
 
                 <div className="relative group">
-                    {/* Gradient Overlays for smooth fade effect */}
+                    {}
                     <div className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
                     <div className="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
@@ -67,7 +67,7 @@ const Placement = () => {
                             {recentPlacements.concat(recentPlacements).map((student, index) => (
                                 <div key={index} className="flex-shrink-0 w-64 bg-white border border-gray-100 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow flex items-center gap-4 mx-4">
                                     <img
-                                        src={`https://randomuser.me/api/portraits/men/${index + 10}.jpg`} // Keep random portraits or map them if needed
+                                        src={`https://randomuser.me/api/portraits/men/${index + 10}.jpg`} 
                                         alt={student.name}
                                         className="w-16 h-16 rounded-full object-cover border-2 border-brand-light"
                                     />
@@ -85,7 +85,7 @@ const Placement = () => {
                 </div>
             </div>
 
-            {/* Success Stories Preview */}
+            {}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
                 <div className="bg-brand-primary rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
                     <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
@@ -125,7 +125,7 @@ const Placement = () => {
                         </div>
                     </div>
 
-                    {/* Background decoration */}
+                    {}
                     <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-brand-accent/20 rounded-full blur-3xl"></div>
                     <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-brand-cyan/20 rounded-full blur-3xl"></div>
                 </div>

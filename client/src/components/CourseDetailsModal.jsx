@@ -7,7 +7,7 @@ const CourseDetailsModal = ({ isOpen, onClose, course, onApply }) => {
     return (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative animate-fade-in font-dm-sans">
-                {/* Close Button */}
+                {}
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10 bg-white/80 p-2 rounded-full"
@@ -15,7 +15,7 @@ const CourseDetailsModal = ({ isOpen, onClose, course, onApply }) => {
                     <FaTimes size={24} />
                 </button>
 
-                {/* Header Image */}
+                {}
                 <div className="relative h-64 bg-gray-100">
                     <img
                         src={course.image}
@@ -30,7 +30,7 @@ const CourseDetailsModal = ({ isOpen, onClose, course, onApply }) => {
                             <h2 className="text-3xl md:text-4xl font-bold mb-2">{course.title}</h2>
                             <div className="flex items-center gap-6 text-sm text-gray-200">
                                 <span className="flex items-center gap-1"><FaCheckCircle className="text-green-400" /> {course.students}</span>
-                                {/* Mocking extra data if not present in schema */}
+                                {}
                                 <span className="flex items-center gap-1"><FaAward /> Certified Course</span>
                             </div>
                         </div>
@@ -38,7 +38,7 @@ const CourseDetailsModal = ({ isOpen, onClose, course, onApply }) => {
                 </div>
 
                 <div className="p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Main Content */}
+                    {}
                     <div className="lg:col-span-2 space-y-8">
                         <div>
                             <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">

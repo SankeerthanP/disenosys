@@ -8,7 +8,7 @@ const bookingSchema = mongoose.Schema({
     },
     course: {
         type: mongoose.Schema.Types.ObjectId,
-        required: false, // Optional for Demo Requests
+        required: false, 
         ref: 'Course',
     },
     type: {

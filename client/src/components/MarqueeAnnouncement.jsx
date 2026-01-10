@@ -32,7 +32,7 @@ const MarqueeAnnouncement = () => {
                 </div>
             </div>
 
-            {/* Social Icons Overlay */}
+            {}
             <div className="absolute right-0 h-full bg-brand-primary px-4 hidden md:flex items-center gap-4 z-10 shadow-[-10px_0_15px_-5px_rgba(0,0,0,0.3)]">
                 <a href="#" className="hover:text-brand-cyan transition-colors"><FaYoutube /></a>
                 <a href="#" className="hover:text-brand-cyan transition-colors"><FaInstagram /></a>

@@ -1,15 +1,15 @@
 const asyncHandler = require('express-async-handler');
 const Booking = require('../models/Booking');
 
-// @desc    Create new booking
-// @route   POST /api/bookings
-// @access  Private
+
+
+
 const addBooking = asyncHandler(async (req, res) => {
     const { courseId, type } = req.body;
 
     const booking = new Booking({
         user: req.user._id,
-        course: courseId, // Can be null for general demos
+        course: courseId, 
         type: type || 'Course Application',
     });
 
@@ -17,9 +17,9 @@ const addBooking = asyncHandler(async (req, res) => {
     res.status(201).json(createdBooking);
 });
 
-// @desc    Get all bookings
-// @route   GET /api/bookings
-// @access  Private/Admin
+
+
+
 const getBookings = asyncHandler(async (req, res) => {
     const bookings = await Booking.find({})
         .populate('user', 'id name email')
@@ -27,9 +27,9 @@ const getBookings = asyncHandler(async (req, res) => {
     res.json(bookings);
 });
 
-// @desc    Get logged in user bookings
-// @route   GET /api/bookings/mybookings
-// @access  Private
+
+
+
 const getMyUserBookings = asyncHandler(async (req, res) => {
     const bookings = await Booking.find({ user: req.user._id })
         .populate('course', 'title category image')
@@ -37,9 +37,9 @@ const getMyUserBookings = asyncHandler(async (req, res) => {
     res.json(bookings);
 });
 
-// @desc    Update booking status
-// @route   PUT /api/bookings/:id/status
-// @access  Private/Admin
+
+
+
 const updateBookingStatus = asyncHandler(async (req, res) => {
     const booking = await Booking.findById(req.params.id);
 

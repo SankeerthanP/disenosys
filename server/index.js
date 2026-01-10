@@ -6,7 +6,7 @@ const courseRoutes = require('./routes/courseRoutes');
 
 dotenv.config();
 
-// Connect to database (will fail gracefully if no URI)
+
 connectDB();
 
 const app = express();

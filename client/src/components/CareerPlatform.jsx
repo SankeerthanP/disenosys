@@ -7,7 +7,7 @@ const CareerPlatform = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                    {/* Left Content */}
+                    {}
                     <div className="relative z-10">
                         <h3 className="text-gray-300 font-bold tracking-wider text-sm uppercase mb-4">WHY CHOOSE DISENOSYS?</h3>
                         <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
@@ -26,7 +26,7 @@ const CareerPlatform = () => {
                         </div>
                     </div>
 
-                    {/* Right Image */}
+                    {}
                     <div className="relative z-10 flex justify-end">
                         <img
                             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
@@ -36,7 +36,7 @@ const CareerPlatform = () => {
                     </div>
                 </div>
             </div>
-            {/* Background decoration */}
+            {}
             <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[800px] h-[800px] bg-blue-900/30 rounded-full blur-3xl"></div>
         </section>
     );

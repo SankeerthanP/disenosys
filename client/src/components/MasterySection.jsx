@@ -7,10 +7,10 @@ const MasterySection = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid leading-tight grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                    {/* Left: Schematic Image */}
+                    {}
                     <div className="relative">
                         <div className="border-[1.5px] border-dashed border-gray-300 rounded-lg p-8 relative">
-                            {/* Decorative dots/markers */}
+                            {}
                             <div className="absolute top-0 left-0 w-3 h-3 bg-gray-400 rounded-full -translate-x-1.5 -translate-y-1.5"></div>
                             <div className="absolute top-0 right-0 w-3 h-3 bg-gray-400 rounded-full translate-x-1.5 -translate-y-1.5"></div>
                             <div className="absolute bottom-0 left-0 w-3 h-3 bg-gray-400 rounded-full -translate-x-1.5 translate-y-1.5"></div>
@@ -19,10 +19,10 @@ const MasterySection = () => {
                             <img
                                 src={c0}
                                 alt="Automotive Design Schematic"
-                                className="w-full h-auto object-contain" // Removed grayscale to show original image clearly as requested
+                                className="w-full h-auto object-contain" 
                             />
 
-                            {/* Overlay UI elements to match schematic look */}
+                            {}
                             <div className="absolute top-10 right-10 bg-white/90 p-2 border border-gray-200 shadow-sm rounded text-[10px] text-gray-500 font-mono">
                                 <div>Width: 1800mm</div>
                                 <div>Height: 1450mm</div>
@@ -30,7 +30,7 @@ const MasterySection = () => {
                         </div>
                     </div>
 
-                    {/* Right: Content */}
+                    {}
                     <div>
                         <h3 className="text-brand-primary font-bold tracking-wider text-xs uppercase mb-4">COURSES THAT SHAPE CAREERS</h3>
                         <h2 className="text-3xl md:text-5xl font-bold text-brand-primary mb-6 leading-tight">

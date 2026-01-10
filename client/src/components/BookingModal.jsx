@@ -21,7 +21,7 @@ const BookingModal = ({ isOpen, onClose, type = 'Demo', courseName = '', courseI
 
         if (type === 'Course Application') {
             setProcessingPayment(true);
-            // Simulate Payment Gateway
+            
             setTimeout(async () => {
                 setProcessingPayment(false);
                 setLoading(true);
@@ -38,14 +38,14 @@ const BookingModal = ({ isOpen, onClose, type = 'Demo', courseName = '', courseI
             const config = {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${JSON.parse(localStorage.getItem('userInfo'))?.token}` // Add ID if user logged in
+                    'Authorization': `Bearer ${JSON.parse(localStorage.getItem('userInfo'))?.token}` 
                 },
             };
 
-            // Note: If user is not logged in, this might fail on backend if it requires auth.
-            // For now assuming user is logged in or backend handles it.
+            
+            
 
-            // Get user token if available
+            
             const userInfo = localStorage.getItem('userInfo');
             const token = userInfo ? JSON.parse(userInfo).token : null;
 
@@ -62,7 +62,7 @@ const BookingModal = ({ isOpen, onClose, type = 'Demo', courseName = '', courseI
                 {
                     ...formData,
                     bookingType: type,
-                    courseId: type === 'Course Application' ? courseId : undefined, // Backend expects courseId (mapped to course)
+                    courseId: type === 'Course Application' ? courseId : undefined, 
                 },
                 authConfig
             );
@@ -83,7 +83,7 @@ const BookingModal = ({ isOpen, onClose, type = 'Demo', courseName = '', courseI
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md relative overflow-hidden font-dm-sans">
-                {/* Close Button */}
+                {}
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"

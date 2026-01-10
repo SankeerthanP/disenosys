@@ -6,7 +6,7 @@ const MissionVision = () => {
         <section className="py-16 bg-white font-dm-sans border-t border-gray-50">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
-                {/* Vision */}
+                {}
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                     <div className="flex-shrink-0 bg-white p-4 rounded-xl shadow-md border border-gray-100">
                         <FaLightbulb className="w-12 h-12 text-brand-primary" />
@@ -22,7 +22,7 @@ const MissionVision = () => {
                     </div>
                 </div>
 
-                {/* Mission */}
+                {}
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                     <div className="flex-shrink-0 bg-white p-4 rounded-xl shadow-md border border-gray-100">
                         <FaRocket className="w-12 h-12 text-brand-primary" />

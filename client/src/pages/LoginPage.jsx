@@ -11,7 +11,7 @@ const LoginPage = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Redirect if already logged in
+    
     useEffect(() => {
         if (user) {
             const from = location.state?.from?.pathname || '/';

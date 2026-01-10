@@ -7,7 +7,7 @@ const AboutSection = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                    {/* Left Column: Image Collage */}
+                    {}
                     <div className="relative">
                         <div className="grid grid-cols-2 gap-4">
                             <div className="space-y-4 mt-8">
@@ -35,12 +35,12 @@ const AboutSection = () => {
                             </div>
                         </div>
 
-                        {/* Decorative Badge Overlay */}
+                        {}
                         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-light rounded-full -z-10 blur-3xl opacity-50"></div>
                         <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-cyan rounded-full -z-10 blur-3xl opacity-20"></div>
                     </div>
 
-                    {/* Right Column: Content */}
+                    {}
                     <div>
                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-light text-brand-accent rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                             <FaAward /> About Us

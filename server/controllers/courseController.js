@@ -1,17 +1,17 @@
 const asyncHandler = require('express-async-handler');
 const Course = require('../models/Course');
 
-// @desc    Get all courses
-// @route   GET /api/courses
-// @access  Public
+
+
+
 const getCourses = asyncHandler(async (req, res) => {
     const courses = await Course.find({});
     res.json(courses);
 });
 
-// @desc    Get single course
-// @route   GET /api/courses/:id
-// @access  Public
+
+
+
 const getCourseById = asyncHandler(async (req, res) => {
     const course = await Course.findById(req.params.id);
 
@@ -23,9 +23,9 @@ const getCourseById = asyncHandler(async (req, res) => {
     }
 });
 
-// @desc    Create a course
-// @route   POST /api/courses
-// @access  Private/Admin
+
+
+
 const createCourse = asyncHandler(async (req, res) => {
     const { title, description, category, price, image } = req.body;
 
@@ -41,9 +41,9 @@ const createCourse = asyncHandler(async (req, res) => {
     res.status(201).json(createdCourse);
 });
 
-// @desc    Update a course
-// @route   PUT /api/courses/:id
-// @access  Private/Admin
+
+
+
 const updateCourse = asyncHandler(async (req, res) => {
     const { title, description, category, price, image } = req.body;
 
@@ -64,9 +64,9 @@ const updateCourse = asyncHandler(async (req, res) => {
     }
 });
 
-// @desc    Delete a course
-// @route   DELETE /api/courses/:id
-// @access  Private/Admin
+
+
+
 const deleteCourse = asyncHandler(async (req, res) => {
     const course = await Course.findById(req.params.id);
 

@@ -12,7 +12,7 @@ const RegisterPage = () => {
     const { register, user } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    // Redirect if already logged in
+    
     useEffect(() => {
         if (user) {
             navigate('/');

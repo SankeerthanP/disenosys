@@ -5,7 +5,7 @@ const WhoWeAre = () => {
         <section className="py-20 bg-white font-dm-sans">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    {/* Left: Image Collage */}
+                    {}
                     <div className="relative">
                         <div className="grid grid-cols-2 gap-4">
                             <img
@@ -19,14 +19,14 @@ const WhoWeAre = () => {
                                 className="rounded-2xl shadow-lg w-full h-64 object-cover"
                             />
                         </div>
-                        {/* Floating Stats Card */}
+                        {}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 text-center w-40">
                             <div className="text-gray-500 text-xs font-semibold uppercase mb-1">Students</div>
                             <div className="text-3xl font-bold text-brand-primary">1000+</div>
                         </div>
                     </div>
 
-                    {/* Right: Content */}
+                    {}
                     <div>
                         <h3 className="text-brand-accent font-bold tracking-wider text-sm uppercase mb-4">WHO WE ARE</h3>
                         <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-6 leading-tight">

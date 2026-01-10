@@ -28,7 +28,7 @@ function App() {
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/my-orders" element={<MyOrders />} />
               <Route path="/admin" element={<AdminDashboard />} />
-              {/* Fallback routes for other links to demonstrate navbar working */}
+              {}
               <Route path="*" element={<Home />} />
             </Routes>
           </main>
