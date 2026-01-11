@@ -27,9 +27,11 @@ const OnlineCourses = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        const BACKEND_URL = "https://disenosys-ks3n.onrender.com";
+
         const fetchCourses = async () => {
             try {
-                const { data } = await axios.get('/api/courses');
+                const { data } = await axios.get(`${BACKEND_URL}/api/courses`);
                 // Filter only Online courses if needed, assuming backend returns all
                 // Based on seed, 'type' is 'Online'. Or we can filter by absence of 'PG' type
                 const onlineOnly = data.filter(c => c.type === 'Online' || !c.type || c.category === 'Online Course' || categories.includes(c.category));

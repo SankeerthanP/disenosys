@@ -18,9 +18,11 @@ const ProgramSwitcher = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const BACKEND_URL = "https://disenosys-ks3n.onrender.com";
+
     const fetchCourses = async () => {
       try {
-        const { data } = await axios.get("/api/courses");
+        const { data } = await axios.get(`${BACKEND_URL}/api/courses`);
         setCourses(data);
         setLoading(false);
       } catch (error) {
@@ -69,21 +71,19 @@ const ProgramSwitcher = () => {
           <div className="bg-gray-200 p-1 rounded-full flex">
             <button
               onClick={() => setActiveTab("PG")}
-              className={`px-8 py-3 rounded-full text-sm font-bold ${
-                activeTab === "PG"
+              className={`px-8 py-3 rounded-full text-sm font-bold ${activeTab === "PG"
                   ? "bg-brand-primary text-white"
                   : "text-gray-600"
-              }`}
+                }`}
             >
               PG Programs
             </button>
             <button
               onClick={() => setActiveTab("Online")}
-              className={`px-8 py-3 rounded-full text-sm font-bold ${
-                activeTab === "Online"
+              className={`px-8 py-3 rounded-full text-sm font-bold ${activeTab === "Online"
                   ? "bg-brand-primary text-white"
                   : "text-gray-600"
-              }`}
+                }`}
             >
               Online Courses
             </button>

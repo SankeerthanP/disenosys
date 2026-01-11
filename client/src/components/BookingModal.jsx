@@ -58,7 +58,9 @@ const BookingModal = ({
         phone: formData.phone,
       };
 
-      await axios.post("/api/bookings", payload, config);
+      const BACKEND_URL = "https://disenosys-ks3n.onrender.com";
+
+      await axios.post(`${BACKEND_URL}/api/bookings`, payload, config);
 
       setSuccess(true);
       setTimeout(() => {

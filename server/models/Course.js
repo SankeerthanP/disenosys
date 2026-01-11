@@ -25,6 +25,12 @@ const courseSchema = mongoose.Schema({
         type: String,
         default: "5,000+ Students"
     },
+    type: {
+        type: String,
+        required: true,
+        enum: ['PG', 'Online'],
+        default: 'Online'
+    },
 }, {
     timestamps: true,
 });

@@ -17,9 +17,11 @@ const PlacementPrograms = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const BACKEND_URL = "https://disenosys-ks3n.onrender.com";
+
     const fetchCourses = async () => {
       try {
-        const { data } = await axios.get("/api/courses");
+        const { data } = await axios.get(`${BACKEND_URL}/api/courses`);
         const pgCourses = data.filter((course) => course.type === "PG");
         setCourses(pgCourses);
         setLoading(false);
