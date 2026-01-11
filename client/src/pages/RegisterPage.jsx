@@ -9,10 +9,12 @@ const RegisterPage = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
 
+    const [loading, setLoading] = useState(false);
+
     const { register, user } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    
+
     useEffect(() => {
         if (user) {
             navigate('/');
@@ -28,10 +30,12 @@ const RegisterPage = () => {
             return;
         }
 
+        setLoading(true);
         const res = await register(name, email, password);
         if (!res.success) {
             setError(res.message);
         }
+        setLoading(false);
     };
 
     return (
@@ -126,9 +130,10 @@ const RegisterPage = () => {
                         <div>
                             <button
                                 type="submit"
-                                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-primary hover:bg-brand-accent hover:text-brand-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary transition-colors duration-200"
+                                disabled={loading}
+                                className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-brand-primary hover:bg-brand-accent'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary transition-colors duration-200`}
                             >
-                                Register
+                                {loading ? 'Creating Account...' : 'Register'}
                             </button>
                         </div>
                     </form>
