@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { FaTimes, FaEnvelope, FaLock, FaUser } from 'react-icons/fa';
 import AuthContext from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const AuthModal = ({ isOpen, onClose }) => {
     const [isLogin, setIsLogin] = useState(true);
@@ -38,8 +39,8 @@ const AuthModal = ({ isOpen, onClose }) => {
         }
 
         if (result.success) {
+            toast.success(isLogin ? "Signed in successfully" : "Account created successfully");
             onClose();
-            
         }
     };
 
@@ -48,7 +49,7 @@ const AuthModal = ({ isOpen, onClose }) => {
     return (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden relative animate-fade-in">
-                {}
+                { }
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { FaBars, FaTimes, FaEnvelope, FaUserCircle, FaLinkedinIn, FaInstagram, FaFacebookF, FaYoutube, FaUser, FaShoppingBag, FaSignOutAlt, FaChevronDown } from 'react-icons/fa';
 import AuthContext from '../context/AuthContext';
 import BookingModal from './BookingModal';
@@ -37,6 +38,7 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logout();
+        toast.success('Signed out successfully');
         setIsDropdownOpen(false);
         navigate('/');
     };
@@ -45,7 +47,7 @@ const Navbar = () => {
         <div className="sticky top-0 z-50 font-dm-sans bg-white">
 
 
-            {}
+            { }
             <nav className={`bg - white transition - all duration - 300 border - b border - gray - 100 ${scrolled ? 'shadow-md py-2' : 'py-4'} `}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center">
@@ -55,17 +57,17 @@ const Navbar = () => {
                             </Link>
                         </div>
 
-                        {}
+                        { }
                         <div className="hidden md:flex items-center space-x-8">
                             <Link to="/" className="text-[#0a0a2a] hover:text-brand-primary font-bold text-base transition-colors">Home</Link>
                             <Link to="/about" className="text-gray-600 hover:text-brand-primary font-bold text-base transition-colors">About</Link>
                             <Link to="/course" className="text-gray-600 hover:text-brand-primary font-bold text-base transition-colors">Course</Link>
-                            <Link to="/admission" className="text-gray-600 hover:text-brand-primary font-bold text-base transition-colors">Admission</Link>
-                            <Link to="/blog" className="text-gray-600 hover:text-brand-primary font-bold text-base transition-colors">Blog</Link>
-                            <Link to="/contact" className="text-gray-600 hover:text-brand-primary font-bold text-base transition-colors">Contact</Link>
+                            <Link to="/admission" className="text-gray-400 font-bold text-base cursor-not-allowed pointer-events-none" aria-disabled="true">Admission</Link>
+                            <Link to="/blog" className="text-gray-400 font-bold text-base cursor-not-allowed pointer-events-none" aria-disabled="true">Blog</Link>
+                            <Link to="/contact" className="text-gray-400 font-bold text-base cursor-not-allowed pointer-events-none" aria-disabled="true">Contact</Link>
                         </div>
 
-                        {}
+                        { }
                         <div className="hidden md:flex items-center gap-4">
                             {!user?.isAdmin && (
                                 <button
@@ -91,7 +93,7 @@ const Navbar = () => {
                                         <FaChevronDown className={`text-gray-400 text-xs transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
                                     </button>
 
-                                    {}
+                                    { }
                                     {isDropdownOpen && (
                                         <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50 animate-fade-in">
                                             {!user.isAdmin && (
@@ -143,7 +145,7 @@ const Navbar = () => {
                             )}
                         </div>
 
-                        {}
+                        { }
                         <div className="md:hidden flex items-center">
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
@@ -155,15 +157,15 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                {}
+                { }
                 {isOpen && (
                     <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl z-40">
                         <div className="px-4 py-6 space-y-4">
                             <Link to="/" className="block text-base font-medium text-gray-800 hover:text-brand-primary">Home</Link>
                             <Link to="/about" className="block text-base font-medium text-gray-600 hover:text-brand-primary">About</Link>
                             <Link to="/course" className="block text-base font-medium text-gray-600 hover:text-brand-primary">Course</Link>
-                            <Link to="/admission" className="block text-base font-medium text-gray-600 hover:text-brand-primary">Admission</Link>
-                            <Link to="/contact" className="block text-base font-medium text-gray-600 hover:text-brand-primary">Contact</Link>
+                            <span className="block text-base font-medium text-gray-400 cursor-not-allowed">Admission</span>
+                            <span className="block text-base font-medium text-gray-400 cursor-not-allowed">Contact</span>
                             <div className="pt-4 flex flex-col gap-3">
                                 {!user?.isAdmin && (
                                     <button

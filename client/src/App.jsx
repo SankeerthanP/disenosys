@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import MarqueeAnnouncement from './components/MarqueeAnnouncement';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -17,6 +18,7 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="min-h-screen flex flex-col font-dm-sans">
+          <Toaster position="top-center" />
           <MarqueeAnnouncement />
           <Navbar />
           <main className="flex-grow">
@@ -28,7 +30,7 @@ function App() {
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/my-orders" element={<MyOrders />} />
               <Route path="/admin" element={<AdminDashboard />} />
-              {}
+              { }
               <Route path="*" element={<Home />} />
             </Routes>
           </main>
